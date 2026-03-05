@@ -135,6 +135,9 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 EOF
 
+nvim --headless "+Lazy! sync" +qa
+nvim --headless "+TSUpdate" +qa
+
 #6. git config
 git config --global init.defaultBranch main
 

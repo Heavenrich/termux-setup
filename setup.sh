@@ -2,8 +2,11 @@
 
 echo "🚀 Starting the Ultimate 'No-Errors' Termux Setup..."
 
-# 1. System Update & Base Packages
-pkg update -y && pkg upgrade -y
+# 1. System Update & Base Packages (Forced Non-Interactive)
+export DEBIAN_FRONTEND=noninteractive
+pkg update -y
+pkg upgrade -y -o Dpkg::Options::="--force-confold"
+
 pkg install python nodejs-lts neovim git gh curl wget zsh build-essential lsd ripgrep fd fastfetch rust -y
 
 # 2. Build Tree-sitter CLI from Source (The only way for v0.26+ on Termux)

@@ -2,6 +2,8 @@
 
 echo "🚀 Starting the Ultimate 'No-Errors' Termux Setup..."
 
+termux-change-repo  # You'll have to pick the mirror once, or just let the script run.
+
 # 1. System Update & Base Packages (Forced Non-Interactive)
 export DEBIAN_FRONTEND=noninteractive
 pkg update -y
